@@ -1,6 +1,104 @@
+@import '~bootstrap/scss/bootstrap';
+:root {
+  --gray: #c5c5c5;
+  --darkgray: #797979;
+  --darkergray: #58595b;
+  --lightgray: #eaeaea;
+  --blue: #36acde;
+}
+.cursorPointer {
+  cursor: pointer;
+}
+.title {
+  font-weight: 600;
+}
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
 html {
   font-size: 65.2%;
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: initial;
+}
+
+// Reset margin and paddings on most elements
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr,
+label {
+  margin: 0;
+  padding: 0;
+}
+
+//* Lets remove those discs from ul
+ul {
+  list-style: none;
+}
+
+//* Reset those pesky forms and buttons
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid gray;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button * {
+  pointer-events: none;
+}
+
+// easy responsive for media elements
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+// some useful table styles
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+// noscript styles
+noscript {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 body {
@@ -27,7 +125,7 @@ code {
   position: sticky;
   height: 6em;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #c5c5c5;
 }
 .navbar {
   display: flex;
@@ -48,6 +146,7 @@ code {
   text-decoration: none;
   display: flex;
   align-items: center;
+  border-bottom: 0.25em solid transparent;
 }
 .activeNavLink {
   border-bottom: 0.25em solid #36acde;
@@ -82,11 +181,13 @@ code {
   width: 100%;
 }
 .overview {
-  border-bottom: 1px black solid;
-  display: flex;
-  justify-content: space-between;
-  h1 {
-    margin-top: 0.99em;
+  @extend .spaceBetween;
+  border-bottom: 1px #c5c5c5 solid;
+  padding: 1.5em 0 0.8em 0;
+
+  h2 {
+    color: #58595b;
+    font-weight: lighter;
   }
   .last_reported {
     display: flex;
@@ -101,12 +202,61 @@ code {
   border: 1px solid lightgray;
   border-top: none;
 }
+// fix border
+.baselineMetricWrapper {
+  @extend .spaceBetween;
+  margin-top: 1.5em;
+  height: 10em;
+  border: 1px solid lightgray;
+  border-top: none;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(5) {
+  width: 70%;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(6) {
+  display: none;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(1) {
+  width: 50%;
+}
 .action {
   border-top: 2px solid #5ab6e5;
   width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
 }
+
+.baselineMetricTitle {
+  @extend .title;
+  color: var(--darkgray);
+  font-size: 1.4rem;
+}
+.num {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--blue);
+  span {
+    color: var(--gray);
+  }
+}
+
 .divider {
   width: 0.2em;
   height: 5em;
@@ -114,4 +264,108 @@ code {
   background-color: lightgray;
   position: relative;
   top: 2.5em;
+}
+.secondRow {
+  display: flex;
+  border: 1px solid red;
+  margin-top: 1.5em;
+  justify-content: space-between;
+}
+.centerContent {
+  @extend .spaceBetween;
+  width: 100%;
+  text-align: center;
+  color: var(--darkgray);
+}
+.dashboardCard {
+  display: flex;
+  border: 1px solid lightgray;
+  flex-direction: column;
+  // width: 65%;
+}
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  width: 30em;
+  border: 1px solid var(--gray);
+  height: 30em;
+  .lol {
+    padding: 1em 1.5em 0em 1.5em;
+  }
+  .notificationHeader {
+    @extend .title;
+    display: flex;
+    font-size: 1.6rem;
+    color: var(--darkergray);
+    .unread {
+      margin-left: 1em;
+      border-radius: 50px;
+      width: 1.9em;
+      background-color: #e97250;
+      color: white;
+      height: 1.5em;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      position: relative;
+      top: 0.7em;
+      font-size: 0.9rem;
+    }
+  }
+
+  .tabs {
+    @extend .cursorPointer;
+    @extend .spaceBetween;
+    font-size: 1.2rem;
+    height: 2.5em;
+    margin-top: 0.3em;
+    width: 70%;
+    color: gray;
+    font-weight: 600;
+
+    .activeNavLink {
+      color: #5ab6e5;
+    }
+  }
+
+  .icon {
+    color: orange;
+    margin-right: 0.5em;
+    position: relative;
+    top: 0.1em;
+  }
+  ul {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  li {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    background-color: #f4fafd;
+    padding: 1em 1.5em 1em 1.5em;
+    .notificationTitle {
+      @extend .title;
+      font-size: 1.3rem;
+      color: gray;
+    }
+    label {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      color: val(--gray);
+      .time {
+        display: flex;
+        font-weight: lighter;
+        .clock {
+          top: -0.1em;
+        }
+      }
+    }
+  }
 }
