@@ -75,7 +75,6 @@ export const dataTonicJSON = {
       dob: 4,
       creditCard: 3,
       IBAN: 2,
-      info: 'Count of Data Sources',
     },
     sensitiveInfoByCatagory: {
       HIPAA: 4,
@@ -157,11 +156,11 @@ export const dataTonicJSON = {
         email: 2.5,
         usBankAccountNumber: 4,
         phone: 4,
-        ssn: 6.5,
+        ssn: 1,
         usPassport: 2,
         abaRouting: 2,
         dob: 1,
-        creditCard: 2,
+        creditCard: 10,
       },
       DS4: {
         swiftCode: 3,

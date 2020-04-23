@@ -266,10 +266,9 @@ code {
   top: 2.5em;
 }
 .secondRow {
-  display: flex;
+  @extend .spaceBetween;
   border: 1px solid red;
   margin-top: 1.5em;
-  justify-content: space-between;
 }
 .centerContent {
   @extend .spaceBetween;
@@ -281,7 +280,11 @@ code {
   display: flex;
   border: 1px solid lightgray;
   flex-direction: column;
-  // width: 65%;
+  width: 70%;
+}
+.graphCardHeader {
+  border: 2px solid purple;
+  @extend .spaceBetween;
 }
 .dashboardHeader {
   display: flex;
@@ -368,4 +371,22 @@ code {
       }
     }
   }
+}
+.virtualPortal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 2;
+}
+.modalCard {
+  background: white;
+  width: 46em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
 }
