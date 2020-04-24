@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { Navbar, Dashboard, NoMatch } from 'components'
+import { Navbar, Dashboard, NoMatch, InvisibleFooter } from 'components'
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </div>
+      <InvisibleFooter />
     </div>
   )
 }
