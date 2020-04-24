@@ -3,10 +3,8 @@ import { dataTonicJSON } from 'dataTonic.js'
 import { Notifications } from './Notifications'
 import { BaselineMetrics } from './BaselineMetrics'
 import { BarGraph } from './BarGraph'
-import { DonutGraph } from './DonutGraph'
 import { Graphs } from './Graphs'
 import { GraphCard } from './GraphCard'
-import { HorizontalBar } from './HorizontalBar'
 import { handleOptions2 } from 'graphHelpers'
 
 export const Dashboard = () => {
@@ -21,13 +19,13 @@ export const Dashboard = () => {
         <GraphCard
           title='Sensitive Info By Catagory'
           filteredBy='Count of Data Sources'
-          subInfo='Sensitive Info Type'
+          subInfo='(Sensitive Info Type)'
           classes='dashboardCard-extend'
           graph={
             <BarGraph
               data={dataTonicJSON.graphs.sensitiveDataDistributionByDataSource}
               title='Sensitive Data Distribution by Data Sources'
-              options={handleOptions2('Sensitive Info Type', '(Total Records)')}
+              options={handleOptions2('Total Info Type')}
             />
           }
         />

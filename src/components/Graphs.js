@@ -51,7 +51,7 @@ export const Graphs = () => {
               data={dataTonicJSON.graphs.inspectionCoveragePercentages}
               colors={colors3}
               handleData={handleData}
-              options={handleOptions('( Inspection coverage (%))')}
+              options={handleOptions('(Inspection coverage (%))')}
             />
           }
         />

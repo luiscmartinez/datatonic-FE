@@ -4,6 +4,7 @@ import { FractionMetric } from './FractionMetric'
 import { BaselineMetricsBar } from './BaselineMetricBar'
 import { BaselineFractionMetric } from './BaselineFractionMetric'
 import { BaselineMetric } from './BaselineMetric'
+import { LineGraph } from './LineGraph'
 
 export const BaselineMetrics = ({ baselineMetrics }) => {
   const {
@@ -16,6 +17,7 @@ export const BaselineMetrics = ({ baselineMetrics }) => {
       <BaselineMetricsCard>
         <div className='baselineMetricTitle'>Security Issues Resolved</div>
         <div className='num'>{securityIssuesResolved}</div>
+        <LineGraph />
       </BaselineMetricsCard>
       <BaselineMetricsCard>
         <div className='baselineMetricTitle'>Inspection Coverage</div>

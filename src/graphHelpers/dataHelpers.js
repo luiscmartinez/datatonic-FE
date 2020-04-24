@@ -90,7 +90,7 @@ export const handleOptions2 = (strX, strY) => {
       xAxes: [
         {
           scaleLabel: {
-            display: true,
+            display: strY ? true : false,
             labelString: strY,
           },
         },
