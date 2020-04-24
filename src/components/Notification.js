@@ -32,12 +32,12 @@ export const Notification = ({ notification }) => {
       <label>
         <div className='notificationTitle'>{title}</div>
         <div className='time'>
-          <div className='icon clock'>
+          <div className='clock'>
             <GrClock />
           </div>
           {created_at}
         </div>
-        <div>{info}</div>
+        <div className='notificationContent'>{info}</div>
       </label>
     </li>
   )

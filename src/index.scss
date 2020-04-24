@@ -331,12 +331,13 @@ code {
   border: 1px solid var(--gray);
   height: 100%;
   .lol {
-    padding: 1em 1.5em 0em 1.5em;
+    padding: 2em 1.5em 0em 1.5em;
+    height: 8em;
   }
   .notificationHeader {
     @extend .title;
     display: flex;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     color: var(--darkergray);
     .unread {
       margin-left: 1em;
@@ -372,8 +373,7 @@ code {
   .icon {
     color: orange;
     margin-right: 0.5em;
-    position: relative;
-    top: 0.1em;
+    font-size: 1.4rem;
   }
   ul {
     overflow-x: hidden;
@@ -388,8 +388,12 @@ code {
     padding: 1em 1.5em 1em 1.5em;
     .notificationTitle {
       @extend .title;
-      font-size: 1.3rem;
+      font-weight: 500;
+      font-size: 1.6rem;
       color: gray;
+    }
+    .notificationContent {
+      font-size: 1.3rem;
     }
     label {
       font-size: 1rem;
@@ -400,6 +404,8 @@ code {
         display: flex;
         font-weight: lighter;
         .clock {
+          margin-right: 0.5em;
+          position: relative;
           top: -0.1em;
         }
       }
