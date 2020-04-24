@@ -40,7 +40,7 @@ export const Navbar = () => {
           </NavLink>
         </div>
         <div className='avatarDropDown'>
-          <span>User001</span>
+          <span>User007</span>
           <UpsideDownTriangleSvg />
         </div>
       </nav>

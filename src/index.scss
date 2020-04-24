@@ -1,6 +1,105 @@
+@import '~bootstrap/scss/bootstrap';
+:root {
+  --gray: #c5c5c5;
+  --darkgray: #797979;
+  --darkergray: #58595b;
+  --lightgray: #eaeaea;
+  --blue: #36acde;
+}
+.cursorPointer {
+  cursor: pointer;
+}
+.title {
+  font-weight: 600;
+}
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
 html {
   font-size: 65.2%;
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: initial;
+}
+
+// Reset margin and paddings on most elements
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr,
+label,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+//* Lets remove those discs from ul
+ul {
+  list-style: none;
+}
+
+//* Reset those pesky forms and buttons
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid gray;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button * {
+  pointer-events: none;
+}
+
+// easy responsive for media elements
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+// some useful table styles
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+// noscript styles
+noscript {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 body {
@@ -27,30 +126,33 @@ code {
   position: sticky;
   height: 6em;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #c5c5c5;
 }
 .navbar {
   display: flex;
   justify-content: space-between;
   font-size: 1.3rem;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   font-weight: bold;
   height: 100%;
+  padding: 0;
 }
 .leftNav {
   display: flex;
   width: 50%;
   justify-content: space-between;
+  height: 100%;
 }
 .navbarLink {
   color: #ababab;
   text-decoration: none;
   display: flex;
   align-items: center;
+  border-bottom: 0.25em solid transparent;
 }
 .activeNavLink {
-  border-bottom: 0.25em solid #36acde;
+  border-bottom: 0.3em solid #36acde;
   color: black;
 }
 .avatarDropDown {
@@ -72,4 +174,276 @@ code {
     width: 100%;
     height: auto;
   }
+}
+.routerContainer {
+  display: flex;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.dashboard {
+  width: 100%;
+}
+.overview {
+  @extend .spaceBetween;
+  border-bottom: 1px #c5c5c5 solid;
+  padding: 1.5em 0 0.8em 0;
+
+  h2 {
+    color: #58595b;
+    font-weight: lighter;
+  }
+  .last_reported {
+    display: flex;
+    align-items: center;
+  }
+}
+.firstRowWrapper {
+  display: flex;
+  margin-top: 1.5em;
+  justify-content: space-between;
+  height: 10em;
+  border: 1px solid lightgray;
+  border-top: none;
+}
+// fix border
+.baselineMetricWrapper {
+  @extend .spaceBetween;
+  margin-top: 1.5em;
+  height: 10em;
+  border: 1px solid lightgray;
+  border-top: none;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(5) {
+  width: 70%;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(6) {
+  display: none;
+}
+#root
+  > div
+  > div.routerContainer
+  > div
+  > div.baselineMetricWrapper
+  > div:nth-child(1) {
+  width: 50%;
+}
+.action {
+  border-top: 2px solid #5ab6e5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 3em;
+}
+
+.baselineMetricTitle {
+  @extend .title;
+  color: var(--darkgray);
+  font-size: 1.4rem;
+}
+.num {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #36acde;
+  span {
+    color: var(--gray);
+  }
+}
+.num-right {
+  margin-bottom: 0.15em;
+}
+
+.divider {
+  width: 0.2em;
+  height: 5em;
+  margin: 0 1em;
+  background-color: lightgray;
+  position: relative;
+  top: 2.5em;
+}
+.secondRow {
+  @extend .spaceBetween;
+  border: 1px solid red;
+  margin-top: 3em;
+  height: 40em;
+}
+
+.thirdRow {
+  @extend .secondRow;
+  height: 29em;
+  width: 100%;
+}
+.centerContent {
+  @extend .spaceBetween;
+  width: 100%;
+  text-align: center;
+  color: var(--darkgray);
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.dashboardCard {
+  display: flex;
+  border: 1px solid lightgray;
+  flex-direction: column;
+  padding: 1em 1em 0 1em;
+  width: 30%;
+  .subInfo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #8d8d8d;
+  }
+}
+.dashboardCard-extend {
+  @extend .dashboardCard;
+  width: 64%;
+  height: 30em;
+}
+
+.graphCardHeader {
+  border: 2px solid purple;
+  color: #797979;
+  @extend .spaceBetween;
+  margin-bottom: 2em;
+  .cardTitle {
+    font-weight: 500;
+    font-size: 2rem;
+    color: #797979;
+  }
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  width: 38em;
+  border: 1px solid var(--gray);
+  height: 100%;
+  .lol {
+    padding: 2em 1.5em 0em 1.5em;
+    height: 8em;
+  }
+  .notificationHeader {
+    @extend .title;
+    display: flex;
+    font-size: 1.9rem;
+    color: var(--darkergray);
+    .unread {
+      margin-left: 1em;
+      border-radius: 50px;
+      width: 1.9em;
+      background-color: #e97250;
+      color: white;
+      height: 1.5em;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      position: relative;
+      top: 0.7em;
+      font-size: 0.9rem;
+    }
+  }
+
+  .tabs {
+    @extend .cursorPointer;
+    @extend .spaceBetween;
+    font-size: 1.2rem;
+    height: 2.5em;
+    margin-top: 0.3em;
+    width: 70%;
+    color: gray;
+    font-weight: 600;
+
+    .activeNavLink {
+      color: #5ab6e5;
+    }
+  }
+
+  .icon {
+    color: orange;
+    margin-right: 0.5em;
+    font-size: 1.4rem;
+  }
+  ul {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #f4fafd;
+    height: 100%;
+  }
+  li {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    background-color: #f4fafd;
+    padding: 1em 1.5em 1em 1.5em;
+    .notificationTitle {
+      @extend .title;
+      font-weight: 500;
+      font-size: 1.6rem;
+      color: gray;
+    }
+    .notificationContent {
+      font-size: 1.3rem;
+    }
+    label {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      color: val(--gray);
+      .time {
+        display: flex;
+        font-weight: lighter;
+        .clock {
+          margin-right: 0.5em;
+          position: relative;
+          top: -0.1em;
+        }
+      }
+    }
+  }
+}
+.virtualPortal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 2;
+}
+.modalCard {
+  background: white;
+  width: 46em;
+  height: 46em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+}
+.donutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.progress {
+  height: 0.8em;
+  border-radius: 0;
+}
+.progress-bar {
+  background-color: #36acde;
+}
+.footer {
+  height: 15em;
 }
