@@ -7,6 +7,7 @@ import { DonutGraph } from './DonutGraph'
 import { Graphs } from './Graphs'
 import { GraphCard } from './GraphCard'
 import { HorizontalBar } from './HorizontalBar'
+import { handleOptions2 } from 'graphHelpers'
 
 export const Dashboard = () => {
   return (
@@ -23,14 +24,11 @@ export const Dashboard = () => {
           subInfo='Sensitive Info Type'
           classes='dashboardCard-extend'
           graph={
-            <div className='dashboardCard-extend'>
-              <BarGraph
-                data={
-                  dataTonicJSON.graphs.sensitiveDataDistributionByDataSource
-                }
-                title='Sensitive Data Distribution by Data Sources'
-              />
-            </div>
+            <BarGraph
+              data={dataTonicJSON.graphs.sensitiveDataDistributionByDataSource}
+              title='Sensitive Data Distribution by Data Sources'
+              options={handleOptions2('Sensitive Info Type', '(Total Records)')}
+            />
           }
         />
         <Notifications notifications={dataTonicJSON.notifications} />

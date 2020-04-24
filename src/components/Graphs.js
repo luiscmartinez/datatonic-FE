@@ -14,6 +14,8 @@ import {
   handleDataForColorStacks,
   handleData,
 } from 'graphHelpers'
+import { handleOptions2 } from 'graphHelpers'
+import { handleOptions } from 'graphHelpers/dataHelpers'
 
 export const Graphs = () => {
   return (
@@ -44,17 +46,12 @@ export const Graphs = () => {
         <GraphCard
           title='inspectionCoveragePercentages'
           filteredBy='By Data Sources'
-          subInfo='( Inspection coverage (%))'
           graph={
             <HorizontalBar
               data={dataTonicJSON.graphs.inspectionCoveragePercentages}
               colors={colors3}
               handleData={handleData}
-              options={{
-                legend: {
-                  display: false,
-                },
-              }}
+              options={handleOptions('( Inspection coverage (%))')}
             />
           }
         />
@@ -63,51 +60,42 @@ export const Graphs = () => {
         <GraphCard
           title='countOfSensitiveInfoType'
           filteredBy='By Data Sources'
-          subInfo='(Count of Unique Sensitive Info Types)'
           graph={
             <HorizontalBar
               data={dataTonicJSON.graphs.countOfSensitiveInfoType}
               colors={colors3}
               handleData={handleData}
-              options={{
-                legend: {
-                  display: false,
-                },
-              }}
+              options={handleOptions('(Count of Unique Sensitive Info Types)')}
             />
           }
         />
         <GraphCard
           title='countOfSensitiveInfoCategory'
           filteredBy='By Data Sources'
-          subInfo='(Count of Unique Sensitive Info Type Catagories)'
           graph={
             <HorizontalBar
               data={dataTonicJSON.graphs.countOfSensitiveInfoCategory}
               colors={colors3}
               handleData={handleData}
-              options={{
-                legend: {
-                  display: false,
-                },
-              }}
+              options={handleOptions(
+                '(Count of Unique Sensitive Info Type Catagories)'
+              )}
             />
           }
         />
         <GraphCard
           title='sensitiveDataRecordCount'
           filteredBy='By Data Sources'
-          subInfo='(Count - Records/Rows Containing Sensitve Info)'
           graph={
             <HorizontalBar
               data={dataTonicJSON.graphs.sensitiveDataRecordCount}
               colors={colors3}
               handleData={handleDataForColorStacks}
-              options={{
-                legend: {
-                  display: false,
-                },
-              }}
+              options={handleOptions2(
+                'Data Sources',
+                '(Count - Records/Rows Containing Sensitve Info)'
+              )}
+              height={220}
             />
           }
         />

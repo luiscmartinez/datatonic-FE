@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
+
 const arbitraryStackKey = 'stack1'
 const colors = {
   swiftCode: '#58B7E5',
@@ -36,25 +37,14 @@ const handleData = datasets => {
   return { labels, datasets: Object.keys(results).map(set => results[set]) }
 }
 export const BarGraph = props => {
-  const { data, title } = props
+  const { data, title, options } = props
   handleData(data)
   return (
     <Bar
       data={handleData(props.data)}
-      width={400}
-      height={300}
-      options={{
-        maintainAspectRatio: false,
-        legend: {
-          position: 'bottom',
-          align: 'center',
-          labels: {
-            usePointStyle: true,
-            padding: 20,
-            fontSize: 11,
-          },
-        },
-      }}
+      width={700}
+      height={200}
+      options={options}
     />
   )
 }

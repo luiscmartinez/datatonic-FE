@@ -39,3 +39,62 @@ export const handleData = (dataSources, colors) => {
     ],
   }
 }
+
+export const handleOptions = (strX, strY = 'Data Source') => {
+  return {
+    legend: {
+      display: false,
+    },
+    scales: {
+      yAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: strY,
+          },
+        },
+      ],
+      xAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: strX,
+          },
+        },
+      ],
+    },
+  }
+}
+
+export const handleOptions2 = (strX, strY) => {
+  return {
+    maintainAspectRatio: false,
+    legend: {
+      position: 'bottom',
+      align: 'center',
+      labels: {
+        usePointStyle: true,
+        padding: 20,
+        fontSize: 11,
+      },
+    },
+    scales: {
+      yAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: strX,
+          },
+        },
+      ],
+      xAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: strY,
+          },
+        },
+      ],
+    },
+  }
+}

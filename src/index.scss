@@ -297,7 +297,7 @@ code {
   border: 1px solid lightgray;
   flex-direction: column;
   padding: 1em 1em 0 1em;
-  width: 36em;
+  width: 30%;
   .subInfo {
     display: flex;
     width: 100%;
@@ -308,17 +308,18 @@ code {
 .dashboardCard-extend {
   @extend .dashboardCard;
   width: 64%;
+  height: 30em;
 }
-.secondRow-expand {
-}
+
 .graphCardHeader {
   border: 2px solid purple;
   color: #797979;
   @extend .spaceBetween;
+  margin-bottom: 2em;
   .cardTitle {
     font-weight: 900;
     font-size: 2rem;
-    color: #58595b;
+    color: #797979;
   }
 }
 
@@ -436,4 +437,7 @@ code {
 }
 .progress-bar {
   background-color: #36acde;
+}
+.footer {
+  height: 15em;
 }

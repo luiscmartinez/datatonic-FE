@@ -1,5 +1,9 @@
 import { doughnutOptions } from './doughnutOptions'
-import { handleDataForColorStacks, handleData } from './dataHelpers'
+import {
+  handleDataForColorStacks,
+  handleData,
+  handleOptions2,
+} from './dataHelpers'
 
 export const colors = {
   swiftCode: '#58B7E5',
@@ -30,4 +34,4 @@ export const colors3 = {
   class3: '#49a66b',
 }
 
-export { handleDataForColorStacks, doughnutOptions, handleData }
+export { handleDataForColorStacks, doughnutOptions, handleData, handleOptions2 }
