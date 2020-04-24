@@ -39,9 +39,10 @@ const doughnutOptions = {
   plugins: {
     outlabels: {
       backgroundColor: null,
-      color: 'black',
-      lineColor: 'black',
+      color: '#909090',
+      lineColor: '#909090',
       text: '%l:%v',
+      fontSize: '5',
     },
   },
 }

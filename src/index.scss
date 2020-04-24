@@ -44,7 +44,8 @@ pre,
 blockquote,
 figure,
 hr,
-label {
+label,
+nav {
   margin: 0;
   padding: 0;
 }
@@ -135,11 +136,13 @@ code {
   margin: 0 auto;
   font-weight: bold;
   height: 100%;
+  padding: 0;
 }
 .leftNav {
   display: flex;
   width: 50%;
   justify-content: space-between;
+  height: 100%;
 }
 .navbarLink {
   color: #ababab;
@@ -149,7 +152,7 @@ code {
   border-bottom: 0.25em solid transparent;
 }
 .activeNavLink {
-  border-bottom: 0.25em solid #36acde;
+  border-bottom: 0.3em solid #36acde;
   color: black;
 }
 .avatarDropDown {
@@ -240,7 +243,7 @@ code {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 1em;
+  padding: 1em 3em;
 }
 
 .baselineMetricTitle {
@@ -250,11 +253,14 @@ code {
 }
 .num {
   font-size: 2rem;
-  font-weight: 500;
-  color: var(--blue);
+  font-weight: 600;
+  color: #36acde;
   span {
     color: var(--gray);
   }
+}
+.num-right {
+  margin-bottom: 0.15em;
 }
 
 .divider {
@@ -268,13 +274,18 @@ code {
 .secondRow {
   @extend .spaceBetween;
   border: 1px solid red;
-  margin-top: 1.5em;
+  margin-top: 3em;
+  height: 40em;
 }
 .centerContent {
   @extend .spaceBetween;
   width: 100%;
   text-align: center;
   color: var(--darkgray);
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  // font-weight: 600;
 }
 .dashboardCard {
   display: flex;
@@ -297,7 +308,7 @@ code {
   color: gray;
   width: 30em;
   border: 1px solid var(--gray);
-  height: 30em;
+  height: 100%;
   .lol {
     padding: 1em 1.5em 0em 1.5em;
   }
@@ -346,6 +357,8 @@ code {
   ul {
     overflow-x: hidden;
     overflow-y: scroll;
+    background-color: #f4fafd;
+    height: 100%;
   }
   li {
     display: flex;
@@ -389,4 +402,17 @@ code {
   left: 50%;
   margin-top: -100px;
   margin-left: -250px;
+}
+.donutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.progress {
+  height: 0.8em;
+  border-radius: 0;
+}
+.progress-bar {
+  background-color: #36acde;
 }
