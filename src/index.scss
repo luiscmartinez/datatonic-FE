@@ -132,7 +132,7 @@ code {
   display: flex;
   justify-content: space-between;
   font-size: 1.3rem;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   font-weight: bold;
   height: 100%;
@@ -177,7 +177,7 @@ code {
 }
 .routerContainer {
   display: flex;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 .dashboard {
@@ -277,6 +277,12 @@ code {
   margin-top: 3em;
   height: 40em;
 }
+
+.thirdRow {
+  @extend .secondRow;
+  height: 29em;
+  width: 100%;
+}
 .centerContent {
   @extend .spaceBetween;
   width: 100%;
@@ -285,28 +291,42 @@ code {
   height: 100%;
   display: flex;
   align-items: flex-end;
-  // font-weight: 600;
 }
 .dashboardCard {
   display: flex;
   border: 1px solid lightgray;
   flex-direction: column;
-  width: 70%;
+  padding: 1em 1em 0 1em;
+  width: 36em;
+  .subInfo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #8d8d8d;
+  }
+}
+.dashboardCard-extend {
+  @extend .dashboardCard;
+  width: 64%;
+}
+.secondRow-expand {
 }
 .graphCardHeader {
   border: 2px solid purple;
+  color: #797979;
   @extend .spaceBetween;
-}
-.dashboardHeader {
-  display: flex;
-  justify-content: space-between;
+  .cardTitle {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #58595b;
+  }
 }
 
 .notifications {
   display: flex;
   flex-direction: column;
   color: gray;
-  width: 30em;
+  width: 38em;
   border: 1px solid var(--gray);
   height: 100%;
   .lol {
@@ -397,6 +417,7 @@ code {
 .modalCard {
   background: white;
   width: 46em;
+  height: 46em;
   position: fixed;
   top: 50%;
   left: 50%;

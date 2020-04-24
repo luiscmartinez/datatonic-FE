@@ -14,5 +14,13 @@ const handleData = (dataSources, colors) => {
   return { labels, datasets: [results] }
 }
 export const DonutGraph = ({ data, colors, options }) => {
-  return <Doughnut data={handleData(data, colors)} options={options} />
+  return (
+    <div className='donutWrapper'>
+      <Doughnut
+        data={handleData(data, colors)}
+        options={options}
+        cutoutPercentage={20}
+      />
+    </div>
+  )
 }

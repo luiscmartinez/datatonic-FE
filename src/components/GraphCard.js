@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import { GiExpand } from 'react-icons/gi'
 import { BsQuestionCircleFill } from 'react-icons/bs'
 import { Modal } from './Modal'
-export const GraphCard = ({ title, subTitle, graph }) => {
+
+export const GraphCard = ({ title, filteredBy, graph, subInfo, classes }) => {
   const [state, setState] = useState({ expand: false })
   const handleClick = () => setState({ expand: !state.expand })
   return (
-    <div className='dashboardCard'>
+    <div className={`dashboardCard ${classes}`}>
       <div className='graphCardHeader'>
         <div>
-          <h2>{title}</h2>
-          <div>{`(${subTitle})`}</div>
+          <div className='cardTitle'>{title}</div>
+          <div>{`(${filteredBy})`}</div>
         </div>
         <div>
           <GiExpand onClick={handleClick} />
@@ -18,14 +19,15 @@ export const GraphCard = ({ title, subTitle, graph }) => {
         </div>
       </div>
       {graph}
+      {subInfo && <div className='subInfo'>{subInfo}</div>}
       {state.expand && (
         <Modal>
           <div className='modalCard'>
-            <div className='dashboardCard'>
+            <div className='dashboardCard-extend'>
               <div className='graphCardHeader'>
                 <div>
                   <h2>{title}</h2>
-                  <div>{`(${subTitle})`}</div>
+                  <div>{`(${filteredBy})`}</div>
                 </div>
                 <div>
                   <GiExpand onClick={handleClick} />
