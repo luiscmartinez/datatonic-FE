@@ -13,8 +13,9 @@ export const GraphCard = ({ title, filteredBy, graph, subInfo, classes }) => {
           <div className='cardTitle'>{title}</div>
           <div>{`(${filteredBy})`}</div>
         </div>
-        <div>
+        <div className='tooltips'>
           <GiExpand onClick={handleClick} />
+          <div className='tooltipDivder'></div>
           <BsQuestionCircleFill />
         </div>
       </div>

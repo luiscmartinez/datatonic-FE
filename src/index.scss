@@ -273,7 +273,7 @@ code {
 }
 .secondRow {
   @extend .spaceBetween;
-  border: 1px solid red;
+  // border: 1px solid red;
   margin-top: 3em;
   height: 40em;
 }
@@ -308,11 +308,13 @@ code {
 .dashboardCard-extend {
   @extend .dashboardCard;
   width: 64%;
-  height: 30em;
+  height: 100%;
 }
-
+.contain-bar {
+  height: 80%;
+}
 .graphCardHeader {
-  border: 2px solid purple;
+  // border: 2px solid purple;
   color: #797979;
   @extend .spaceBetween;
   margin-bottom: 2em;
@@ -446,4 +448,16 @@ code {
 }
 .footer {
   height: 15em;
+}
+
+.tooltips {
+  font-size: 1.5rem;
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.tooltipDivder {
+  border: 1px solid gray;
+  height: 0.9em;
+  margin: 0 0.4em;
 }
