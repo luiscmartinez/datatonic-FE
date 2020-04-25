@@ -26,7 +26,10 @@ export const Dashboard = () => {
     <div className='dashboard'>
       <div className='overview'>
         <h2>OVERVIEW</h2>
-        <div className='last_reported'>Last scan 4 hours ago</div>
+        <div className='last_reported'>
+          {'Last scan '}
+          <strong>{' 4 hours ago'}</strong>
+        </div>
       </div>
       <BaselineMetrics baselineMetrics={dataTonicJSON.overview} />
       <div className='secondRow'>
