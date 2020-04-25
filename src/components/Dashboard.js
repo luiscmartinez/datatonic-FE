@@ -1,5 +1,5 @@
-import React from 'react'
-import { dataTonicJSON } from 'dataTonic.js'
+import React, { useState, useEffect } from 'react'
+import axios from 'api'
 import { Notifications } from './Notifications'
 import { BaselineMetrics } from './BaselineMetrics'
 import { BarGraph } from './BarGraph'
@@ -8,6 +8,20 @@ import { GraphCard } from './GraphCard'
 import { handleOptions2 } from 'graphHelpers'
 
 export const Dashboard = () => {
+  const [dataTonicJSON, setDataTonic] = useState(null)
+  useEffect(() => {
+    axios
+      .get('/')
+      .then(res => setDataTonic(res.data))
+      .catch(err => setDataTonic('whoops'))
+  }, [])
+
+  if (dataTonicJSON === null) {
+    return <div>LOADING</div>
+  }
+  if (dataTonicJSON === 'whoops') {
+    return <div>WHOOPS SOMETHING WENT WRONG 😷</div>
+  }
   return (
     <div className='dashboard'>
       <div className='overview'>

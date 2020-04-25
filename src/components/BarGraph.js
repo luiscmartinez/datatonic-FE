@@ -40,12 +40,14 @@ export const BarGraph = props => {
   const { data, title, options } = props
   handleData(data)
   return (
-    <Bar
-      data={handleData(props.data)}
-      width={700}
-      height={200}
-      options={options}
-    />
+    <div className='contain-bar'>
+      <Bar
+        data={handleData(props.data)}
+        width={700}
+        height={200}
+        options={options}
+      />
+    </div>
   )
 }
 // import React from 'react'
