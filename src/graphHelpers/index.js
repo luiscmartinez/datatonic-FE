@@ -15,6 +15,7 @@ export const colors = {
   abaRouting: '#2086B6',
   dob: '#47A268',
   creditCard: '#CC502D',
+  IBAN: 'pink',
 }
 export const colors2 = {
   HIPAA: '#58B7E5',

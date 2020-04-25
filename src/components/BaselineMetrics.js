@@ -1,7 +1,5 @@
 import React from 'react'
 import { BaselineMetricsCard } from './BaselineMetricsCard'
-import { FractionMetric } from './FractionMetric'
-import { BaselineMetricsBar } from './BaselineMetricBar'
 import { BaselineFractionMetric } from './BaselineFractionMetric'
 import { BaselineMetric } from './BaselineMetric'
 import { LineGraph } from './LineGraph'

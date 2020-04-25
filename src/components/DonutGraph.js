@@ -1,6 +1,6 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
-import outlabeledPiev from 'chartjs-plugin-piechart-outlabels'
+// import outlabeledPiev from 'chartjs-plugin-piechart-outlabels'
 
 const handleData = (dataSources, colors) => {
   const labels = []

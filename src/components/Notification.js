@@ -14,7 +14,6 @@ export const Notification = ({ notification }) => {
             <IoMdAlert />
           </div>
         )
-        break
       case 2:
         return <BsBellFill />
       default:
@@ -23,7 +22,6 @@ export const Notification = ({ notification }) => {
             <FaInfoCircle />
           </div>
         )
-        break
     }
   }
   return (

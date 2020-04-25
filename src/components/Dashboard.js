@@ -20,7 +20,7 @@ export const Dashboard = () => {
     return <div>LOADING</div>
   }
   if (dataTonicJSON === 'whoops') {
-    return <div>WHOOPS SOMETHING WENT WRONG 😷</div>
+    return <div>{'WHOOPS SOMETHING WENT WRONG 😷'}</div>
   }
   return (
     <div className='dashboard'>

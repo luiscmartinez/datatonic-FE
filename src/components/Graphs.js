@@ -2,9 +2,6 @@ import React from 'react'
 import { DonutGraph } from './DonutGraph'
 import { GraphCard } from './GraphCard'
 import { dataTonicJSON } from 'dataTonic.js'
-import { Notifications } from './Notifications'
-import { BaselineMetrics } from './BaselineMetrics'
-import { BarGraph } from './BarGraph'
 import { HorizontalBar } from './HorizontalBar'
 import {
   colors,
