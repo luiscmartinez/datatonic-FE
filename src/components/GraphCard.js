@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import { GiExpand } from 'react-icons/gi'
 import { BsQuestionCircleFill } from 'react-icons/bs'
 import useOnClickOutside from 'use-onclickoutside'
+import ReactTooltip from 'react-tooltip'
 
 import { Modal } from './Modal'
 
@@ -23,7 +24,10 @@ export const GraphCard = ({ title, filteredBy, graph, subInfo, classes }) => {
         <div className='tooltips'>
           <GiExpand onClick={handleClick} />
           <div className='tooltipDivder'></div>
-          <BsQuestionCircleFill />
+          <BsQuestionCircleFill data-tip='questionIcon' />
+          <ReactTooltip data-tip='questionIcon'>
+            <div>boudin prosciutto ham hock bacon ipsum </div>
+          </ReactTooltip>
         </div>
       </div>
       {graph}
