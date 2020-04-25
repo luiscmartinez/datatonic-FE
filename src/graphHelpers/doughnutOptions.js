@@ -3,9 +3,6 @@ export const doughnutOptions = {
   legend: {
     display: false,
   },
-  tooltips: {
-    enabled: false,
-  },
   plugins: {
     outlabels: {
       backgroundColor: null,

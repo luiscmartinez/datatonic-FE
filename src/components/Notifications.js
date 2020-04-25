@@ -22,14 +22,13 @@ export const Notifications = ({ notifications }) => {
 
   const filteredNotifications = notifications.filter(notification => {
     if (state.active === 'All') {
-      return <Notification notification={notification} />
+      return notification
     }
     if (mappingStatues[state.active] === notification.type) {
-      return <Notification notification={notification} />
+      return notification
     }
-    return
+    return false
   })
-  console.log(filteredNotifications)
   return (
     <div className='notifications'>
       <div className='lol'>
@@ -65,8 +64,8 @@ export const Notifications = ({ notifications }) => {
         </div>
       </div>
       <ul>
-        {filteredNotifications.map(notification => {
-          return <Notification notification={notification} />
+        {filteredNotifications.map((notification, i) => {
+          return <Notification key={i} notification={notification} />
         })}
       </ul>
     </div>

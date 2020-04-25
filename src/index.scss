@@ -195,6 +195,9 @@ code {
   .last_reported {
     display: flex;
     align-items: center;
+    strong {
+      margin-left: 0.3em;
+    }
   }
 }
 .firstRowWrapper {
