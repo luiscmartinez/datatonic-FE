@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { OverviewHeader } from './OverviewHeader'
 import { BaselineMetrics } from './BaselineMetrics'
 
-export const Overview = ({ overview }) => {
+export const Overview = ({ overview, isLoading }) => {
   return (
     <div className='overview'>
       <OverviewHeader />
-      <BaselineMetrics baselineMetrics={overview} />
+      <BaselineMetrics baselineMetrics={overview} isLoading={isLoading} />
     </div>
   )
 }
