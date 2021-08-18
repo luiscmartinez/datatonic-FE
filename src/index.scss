@@ -186,7 +186,6 @@ code {
 .overview {
   display: flex;
   flex-direction: column;
-  border: 3px solid red;
   h2 {
     color: #58595b;
     font-weight: lighter;
@@ -281,7 +280,6 @@ code {
 }
 .secondRow {
   @extend .spaceBetween;
-  // border: 1px solid red;
   margin-top: 3em;
   height: 40em;
 }
@@ -345,6 +343,8 @@ code {
     display: flex;
     font-size: 1.9rem;
     color: var(--darkergray);
+    padding: 12px;
+    padding-bottom: 0px;
     .unread {
       margin-left: 1em;
       border-radius: 50px;
@@ -370,7 +370,7 @@ code {
     width: 70%;
     color: gray;
     font-weight: 600;
-
+    padding:0px 12px;
     .activeNavLink {
       color: #5ab6e5;
     }
@@ -391,7 +391,7 @@ code {
     display: flex;
     border-bottom: 1px solid lightgray;
     background-color: #f4fafd;
-    padding: 1em 1.5em 1em 1.5em;
+    padding: 12px;
     .notificationTitle {
       @extend .title;
       font-weight: 500;
