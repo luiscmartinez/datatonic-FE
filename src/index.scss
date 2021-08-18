@@ -314,7 +314,10 @@ code {
 .dashboardCard-extend {
   @extend .dashboardCard;
   width: 64%;
-  height: 100%;
+  height: auto;
+  @media (max-width: 1000px) {
+    justify-content: flex-end;
+  }
 }
 .contain-bar {
   height: 80%;
