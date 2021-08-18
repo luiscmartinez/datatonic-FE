@@ -184,19 +184,24 @@ code {
   width: 100%;
 }
 .overview {
-  @extend .spaceBetween;
-  border-bottom: 1px #c5c5c5 solid;
-  padding: 1.5em 0 0.8em 0;
-
+  display: flex;
+  flex-direction: column;
+  border: 3px solid red;
   h2 {
     color: #58595b;
     font-weight: lighter;
   }
-  .last_reported {
-    display: flex;
-    align-items: center;
-    strong {
-      margin-left: 0.3em;
+  .overview-header-container {
+    @extend .spaceBetween;
+    border-bottom: 1px #c5c5c5 solid;
+    padding: 1.5em 0 0.8em 0;
+    text-align: center;
+    .last_reported {
+      display: flex;
+      align-items: center;
+      strong {
+        margin-left: 0.3em;
+      }
     }
   }
 }
@@ -464,3 +469,4 @@ code {
   height: 0.9em;
   margin: 0 0.4em;
 }
+
