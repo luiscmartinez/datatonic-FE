@@ -31,7 +31,6 @@ export const Notifications = ({ notifications }) => {
   })
   return (
     <div className='notifications'>
-      <div className='lol'>
         <div className='notificationHeader'>
           <div>Notifications</div>
           <div className='unread'>{unread}</div>
@@ -62,7 +61,6 @@ export const Notifications = ({ notifications }) => {
             Info
           </div>
         </div>
-      </div>
       <ul>
         {filteredNotifications.map((notification, i) => {
           return <Notification key={i} notification={notification} />

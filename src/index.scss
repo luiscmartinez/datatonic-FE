@@ -340,10 +340,6 @@ code {
   width: 38em;
   border: 1px solid var(--gray);
   height: 100%;
-  .lol {
-    padding: 2em 1.5em 0em 1.5em;
-    height: 8em;
-  }
   .notificationHeader {
     @extend .title;
     display: flex;
