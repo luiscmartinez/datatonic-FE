@@ -12,7 +12,13 @@ export const Dashboard = () => {
   useEffect(() => {
     axios
       .get('/')
-      .then(res => setDataTonic(res.data))
+      .then(res => {
+        if (typeof res.data !== "object") {
+          setDataTonic('whoops')
+          return
+        }
+        setDataTonic(res.data)
+      })
       .catch(err => setDataTonic('whoops'))
   }, [])
 
