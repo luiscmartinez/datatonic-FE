@@ -3,13 +3,14 @@ import { BaselineMetricsCard } from './BaselineMetricsCard'
 import { BaselineFractionMetric } from './BaselineFractionMetric'
 import { BaselineMetric } from './BaselineMetric'
 import { LineGraph } from './LineGraph'
+import { BaselineMetricsLoading } from './BaselineMetrics/BaselineMetricsLoading'
 
-export const BaselineMetrics = ({ baselineMetrics }) => {
-  const {
-    sensitiveDataLocations,
-    inspectionCoverage,
-    securityIssuesResolved,
-  } = baselineMetrics
+export const BaselineMetrics = ({ baselineMetrics, isLoading }) => {
+  if (isLoading) {
+    return <BaselineMetricsLoading />
+  }
+  const { sensitiveDataLocations, inspectionCoverage, securityIssuesResolved } =
+    baselineMetrics
   return (
     <div className='baselineMetricWrapper'>
       <BaselineMetricsCard>
