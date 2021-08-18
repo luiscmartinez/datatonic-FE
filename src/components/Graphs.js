@@ -13,13 +13,15 @@ import {
 } from 'graphHelpers'
 import { handleOptions2 } from 'graphHelpers'
 import { handleOptions } from 'graphHelpers/dataHelpers'
+import { PieChart } from './PieChartLoader'
+import { HorizontalBarChartLoader } from './HorizontalBarChartLoader'
 
-export const Graphs = () => {
+export const Graphs = ({isLoading}) => {
   return (
     <>
       <div className='thirdRow'>
         <GraphCard
-          title='Sensitive Info By Catagory'
+          title='Sensitive Info By Category'
           filteredBy='Count of Data Sources'
           graph={
             <DonutGraph
@@ -27,6 +29,10 @@ export const Graphs = () => {
               colors={colors}
               options={doughnutOptions}
             />
+          }
+          isLoading={isLoading}
+          loader={
+            <PieChart/>
           }
         />
         <GraphCard
@@ -39,6 +45,10 @@ export const Graphs = () => {
               options={doughnutOptions}
             />
           }
+          isLoading={isLoading}
+          loader={
+            <PieChart/>
+          }
         />
         <GraphCard
           title='inspectionCoveragePercentages'
@@ -50,6 +60,10 @@ export const Graphs = () => {
               handleData={handleData}
               options={handleOptions('(Inspection coverage (%))')}
             />
+          }
+          isLoading={isLoading}
+          loader={
+            <HorizontalBarChartLoader />
           }
         />
       </div>
@@ -65,6 +79,10 @@ export const Graphs = () => {
               options={handleOptions('(Count of Unique Sensitive Info Types)')}
             />
           }
+          isLoading={isLoading}
+          loader={
+            <HorizontalBarChartLoader />
+          }
         />
         <GraphCard
           title='countOfSensitiveInfoCategory'
@@ -78,6 +96,10 @@ export const Graphs = () => {
                 '(Count of Unique Sensitive Info Type Catagories)'
               )}
             />
+          }
+          isLoading={isLoading}
+          loader={
+            <HorizontalBarChartLoader />
           }
         />
         <GraphCard
@@ -94,6 +116,10 @@ export const Graphs = () => {
               )}
               height={220}
             />
+          }
+          isLoading={isLoading}
+          loader={
+            <HorizontalBarChartLoader />
           }
         />
       </div>

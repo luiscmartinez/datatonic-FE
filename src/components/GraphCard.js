@@ -6,7 +6,7 @@ import ReactTooltip from 'react-tooltip'
 
 import { Modal } from './Modal'
 
-export const GraphCard = ({ title, filteredBy, graph, subInfo, classes }) => {
+export const GraphCard = ({ title, filteredBy, graph, subInfo, classes, isLoading, loader }) => {
   const [state, setState] = useState({ expand: false })
   const handleClick = () => setState({ expand: !state.expand })
   const modalRef = useRef(null)
@@ -14,6 +14,13 @@ export const GraphCard = ({ title, filteredBy, graph, subInfo, classes }) => {
     if (e.target.classList[0] === 'modalCard') return
     handleClick()
   })
+  if (isLoading) {
+    return (
+      <div className={`dashboardCard ${classes}`}>
+        {loader}
+      </div>
+    )
+  }
   return (
     <div className={`dashboardCard ${classes}`}>
       <div className='graphCardHeader'>
