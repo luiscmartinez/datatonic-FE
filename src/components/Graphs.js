@@ -112,7 +112,7 @@ export const Graphs = ({isLoading}) => {
               handleData={handleDataForColorStacks}
               options={handleOptions2(
                 'Data Sources',
-                '(Count - Records/Rows Containing Sensitve Info)'
+                '(Count - Records/Rows Containing Sensitive Info)'
               )}
               height={220}
             />
