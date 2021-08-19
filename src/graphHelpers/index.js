@@ -2,7 +2,6 @@ import { doughnutOptions } from './doughnutOptions'
 import {
   handleDataForColorStacks,
   handleData,
-  handleOptions2,
 } from './dataHelpers'
 
 export const colors = {
@@ -35,4 +34,4 @@ export const colors3 = {
   class3: '#49a66b',
 }
 
-export { handleDataForColorStacks, doughnutOptions, handleData, handleOptions2 }
+export { handleDataForColorStacks, doughnutOptions, handleData }

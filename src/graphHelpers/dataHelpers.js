@@ -35,58 +35,38 @@ export const handleData = (dataSources, colors) => {
   return {
     labels,
     datasets: [
-      { data: results.data, backgroundColor: '#36acde', barThickness: 10 },
+      {
+        data: results.data,
+        backgroundColor: '#36acde',
+        barThickness: 10,
+      },
     ],
   }
 }
 
-export const handleOptions = (strX, strY = 'Data Source') => {
+export const handleOptions = (strX, strY = '(Data Source)') => {
   return {
-    legend: {
-      display: false,
-    },
+    indexAxis: 'y',
     scales: {
-      yAxes: [
-        {
-          scaleLabel: {
-            display: true,
-            labelString: strY,
-          },
+      x: {
+        beginAtZero: false,
+        title: {
+          text: strX,
+          display: true,
         },
-      ],
-      xAxes: [
-        {
-          scaleLabel: {
-            display: true,
-            labelString: strX,
-          },
+      },
+      y: {
+        title: {
+          text: strY,
+          display: true,
         },
-      ],
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
     },
   }
 }
 
-export const handleOptions2 = (strX, strY) => {
-  return {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        align: 'center',
-        labels: {
-          usePointStyle: true,
-          padding: 15,
-          fontSize: 11,
-        },
-      },
-      title: {
-        display: true,
-        text: strX,
-        position: 'left',
-        font: { weight: 'normal' },
-        align: 'center',
-      },
-    },
-    maintainAspectRatio: false,
-  }
-}

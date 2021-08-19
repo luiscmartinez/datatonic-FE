@@ -76,7 +76,7 @@ export const dataTonicJSON = {
       creditCard: 3,
       IBAN: 2,
     },
-    sensitiveInfoByCatagory: {
+    sensitiveInfoByCategory: {
       HIPAA: 4,
       FERPA: 8,
       Class3: 4,

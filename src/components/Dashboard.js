@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'api'
 import { Notifications } from './Notifications'
-import { BarGraph } from './BarGraph'
+import { BarGraph, handleVerticalBarChartOpts } from './verticalBarChart'
 import { Graphs } from './Graphs'
 import { GraphCard } from './GraphCard'
-import { handleOptions2 } from 'graphHelpers'
 import { Overview } from './Overview'
 import { BarChartLoader } from './BarChartLoader'
 
@@ -21,13 +20,9 @@ export const Dashboard = () => {
           return
         }
         setDataTonic(res.data)
-        setTimeout(function() {
-          setIsNotificationsLoading(false)
-        }, 1500);
+        setIsNotificationsLoading(false)
+        setBarChartLoading(false)
 
-        setTimeout(function() {
-          setBarChartLoading(false)
-        }, 2500);
       })
       .catch(err => setDataTonic('whoops'))
   }, [])
@@ -40,8 +35,7 @@ export const Dashboard = () => {
       <Overview overview={dataTonicJSON.overview} isLoading={isNotificationsLoading} />
       <div className='secondRow'>
         <GraphCard
-          title='Sensitive Info By Catagory'
-          filteredBy='Count of Data Sources'
+          title='Sensitive Data Distribution by Data Sources'
           subInfo='(Sensitive Info Type)'
           classes='dashboardCard-extend'
           isLoading={isBarChartLoading}
@@ -49,7 +43,7 @@ export const Dashboard = () => {
             <BarGraph
               data={dataTonicJSON?.graphs?.sensitiveDataDistributionByDataSource}
               title='Sensitive Data Distribution by Data Sources'
-              options={handleOptions2('Total Info Type')}
+              options={handleVerticalBarChartOpts('(Total Records)')}
             />
           }
           loader={

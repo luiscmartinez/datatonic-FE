@@ -26,7 +26,9 @@ export const GraphCard = ({ title, filteredBy, graph, subInfo, classes, isLoadin
       <div className='graphCardHeader'>
         <div>
           <div className='cardTitle'>{title}</div>
-          <div>{`(${filteredBy})`}</div>
+          {filteredBy && (
+            <div>{`(${filteredBy})`}</div>
+          )}
         </div>
         <div className='tooltips'>
           <GiExpand onClick={handleClick} />
