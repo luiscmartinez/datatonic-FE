@@ -68,33 +68,25 @@ export const handleOptions = (strX, strY = 'Data Source') => {
 
 export const handleOptions2 = (strX, strY) => {
   return {
-    maintainAspectRatio: false,
-    legend: {
-      position: 'bottom',
-      align: 'center',
-      labels: {
-        usePointStyle: true,
-        padding: 20,
-        fontSize: 11,
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        align: 'center',
+        labels: {
+          usePointStyle: true,
+          padding: 15,
+          fontSize: 11,
+        },
+      },
+      title: {
+        display: true,
+        text: strX,
+        position: 'left',
+        font: { weight: 'normal' },
+        align: 'center',
       },
     },
-    scales: {
-      yAxes: [
-        {
-          scaleLabel: {
-            display: true,
-            labelString: strX,
-          },
-        },
-      ],
-      xAxes: [
-        {
-          scaleLabel: {
-            display: strY ? true : false,
-            labelString: strY,
-          },
-        },
-      ],
-    },
+    maintainAspectRatio: false,
   }
 }

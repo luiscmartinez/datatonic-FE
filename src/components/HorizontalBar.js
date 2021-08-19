@@ -1,5 +1,5 @@
 import React from 'react'
-import { HorizontalBar as HorizontalBarChart } from 'react-chartjs-2'
+import { Bar as HorizontalBarChart } from 'react-chartjs-2'
 
 export const HorizontalBar = ({
   data,
