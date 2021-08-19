@@ -5,7 +5,6 @@ export const BarChartLoader = props => {
   return (
     <ContentLoader
       viewBox='0 0 300 200'
-      style={{ border: '2px solid red' }}
       backgroundColor='#f3f3f3'
       foregroundColor='#ecebeb'
       {...props}
