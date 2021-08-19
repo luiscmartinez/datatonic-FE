@@ -1,10 +1,11 @@
 export const doughnutOptions = {
-  maintainAspectRatio: true,
-  legend: {
-    display: false,
-  },
+  responsive: true,
+  maintainAspectRatio: false,
   plugins: {
-    outlabels: {
+    legend: {
+      display: false,
+    },
+    elements: {
       backgroundColor: null,
       color: '#909090',
       lineColor: '#909090',
