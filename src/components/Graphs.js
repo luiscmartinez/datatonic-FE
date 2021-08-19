@@ -2,7 +2,6 @@ import React from 'react'
 import { DonutGraph } from './DonutGraph'
 import { GraphCard } from './GraphCard'
 import { dataTonicJSON } from 'dataTonic.js'
-import { HorizontalBar } from './HorizontalBar'
 import {
   colors,
   colors2,
@@ -11,17 +10,20 @@ import {
   handleDataForColorStacks,
   handleData,
 } from 'graphHelpers'
-import { handleOptions2 } from 'graphHelpers'
+import {
+  handleHorizontalChartOps,
+  HorizontalBar,
+  HorizontalBarChartLoader,
+} from './horizontalChart'
 import { handleOptions } from 'graphHelpers/dataHelpers'
 import { PieChart } from './PieChartLoader'
-import { HorizontalBarChartLoader } from './HorizontalBarChartLoader'
 
-export const Graphs = ({isLoading}) => {
+export const Graphs = ({ isLoading }) => {
   return (
     <>
       <div className='thirdRow'>
         <GraphCard
-          title='Sensitive Info By Category'
+          title='Sensitive Info By Type'
           filteredBy='Count of Data Sources'
           graph={
             <DonutGraph
@@ -31,27 +33,23 @@ export const Graphs = ({isLoading}) => {
             />
           }
           isLoading={isLoading}
-          loader={
-            <PieChart/>
-          }
+          loader={<PieChart />}
         />
         <GraphCard
-          title='Sensitive Info By Type'
+          title='Sensitive Info By Category'
           filteredBy='Count of Data Sources'
           graph={
             <DonutGraph
-              data={dataTonicJSON.graphs.sensitiveInfoByCatagory}
+              data={dataTonicJSON.graphs.sensitiveInfoByCategory}
               colors={colors2}
               options={doughnutOptions}
             />
           }
           isLoading={isLoading}
-          loader={
-            <PieChart/>
-          }
+          loader={<PieChart />}
         />
         <GraphCard
-          title='inspectionCoveragePercentages'
+          title='Inspection Coverage'
           filteredBy='By Data Sources'
           graph={
             <HorizontalBar
@@ -62,14 +60,12 @@ export const Graphs = ({isLoading}) => {
             />
           }
           isLoading={isLoading}
-          loader={
-            <HorizontalBarChartLoader />
-          }
+          loader={<HorizontalBarChartLoader />}
         />
       </div>
       <div className='thirdRow'>
         <GraphCard
-          title='countOfSensitiveInfoType'
+          title='Count of Sensitive Info Type'
           filteredBy='By Data Sources'
           graph={
             <HorizontalBar
@@ -80,12 +76,10 @@ export const Graphs = ({isLoading}) => {
             />
           }
           isLoading={isLoading}
-          loader={
-            <HorizontalBarChartLoader />
-          }
+          loader={<HorizontalBarChartLoader />}
         />
         <GraphCard
-          title='countOfSensitiveInfoCategory'
+          title='Count of Sensitive Info Category'
           filteredBy='By Data Sources'
           graph={
             <HorizontalBar
@@ -98,19 +92,17 @@ export const Graphs = ({isLoading}) => {
             />
           }
           isLoading={isLoading}
-          loader={
-            <HorizontalBarChartLoader />
-          }
+          loader={<HorizontalBarChartLoader />}
         />
         <GraphCard
-          title='sensitiveDataRecordCount'
+          title='Sensitive Data Record Count'
           filteredBy='By Data Sources'
           graph={
             <HorizontalBar
               data={dataTonicJSON.graphs.sensitiveDataRecordCount}
               colors={colors3}
               handleData={handleDataForColorStacks}
-              options={handleOptions2(
+              options={handleHorizontalChartOps(
                 'Data Sources',
                 '(Count - Records/Rows Containing Sensitive Info)'
               )}
@@ -118,9 +110,7 @@ export const Graphs = ({isLoading}) => {
             />
           }
           isLoading={isLoading}
-          loader={
-            <HorizontalBarChartLoader />
-          }
+          loader={<HorizontalBarChartLoader />}
         />
       </div>
     </>
